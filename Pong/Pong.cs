@@ -52,10 +52,10 @@ namespace Pong
         //player and game scores
         int player1Score = 0;
         int player2Score = 0;
-        int gameWinScore = 3;  // number of points needed to win game
+        int gameWinScore = 3;  // number of points needed to win game      
         
         //extra
-        int rallyCounter = 0;
+        int rallyCounter = 0;       
         
         #endregion
 
@@ -130,6 +130,10 @@ namespace Pong
                 newGameOk = false;
                 startLabel.Visible = false;
                 gameUpdateLoop.Start();
+
+                p1Score.Visible = true;
+                p2Score.Visible = true;
+                rallyLabel.Visible = true;
             }
 
             //set starting position for paddles on new game and point scored 
@@ -238,6 +242,7 @@ namespace Pong
                 collisionSound.Play(); //"paddle hit" sound
                 ballMoveRight = true;   //use ballMoveRight boolean to change direction
                 rallyCounter++;
+                rallyLabel.Text = "Rally: " + rallyCounter;
             }
 
             else if (p2.IntersectsWith(ball))
@@ -245,6 +250,7 @@ namespace Pong
                 collisionSound.Play(); //"paddle hit" sound
                 ballMoveRight = false;  //use ballMoveRight boolean to change direction
                 rallyCounter++;
+                rallyLabel.Text = "Rally: " + rallyCounter;
 
                 /*  ENRICHMENT
                  *  Instead of using two if statments as noted above see if you can create one
@@ -279,6 +285,9 @@ namespace Pong
                 scoreSound.Play();
                 player2Score++;
 
+                rallyCounter = 0;
+                rallyLabel.Text = "Rally: " + rallyCounter;
+
                 p2Score.Text = "" + player2Score;
 
                 if (player2Score == gameWinScore)
@@ -298,14 +307,16 @@ namespace Pong
                 ball.Width = ball.Height = 15;
                 BALL_SPEED = 4;
                 PADDLE_SPEED = 6;              
-                exclamationLabel.Text = "";
-                rallyCounter = 0;
+                exclamationLabel.Text = "";                
             }
             
             if (ball.X > this.Width) //collision with the right wall
             {
                 scoreSound.Play();
                 player1Score++;
+
+                rallyCounter = 0;
+                rallyLabel.Text = "Rally: " + rallyCounter;
 
                 p1Score.Text = "" + player1Score;
 
@@ -325,7 +336,6 @@ namespace Pong
                 BALL_SPEED = 4;
                 PADDLE_SPEED = 6;
                 exclamationLabel.Text = "";
-                rallyCounter = 0;
 
                 //ballMoveRight == false;
             }

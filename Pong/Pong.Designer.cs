@@ -34,6 +34,7 @@
             this.exclamationLabel = new System.Windows.Forms.Label();
             this.p2Score = new System.Windows.Forms.Label();
             this.p1Score = new System.Windows.Forms.Label();
+            this.rallyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gameUpdateLoop
@@ -46,7 +47,7 @@
             this.startLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.startLabel.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startLabel.Font = new System.Drawing.Font("mono 07_55", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startLabel.ForeColor = System.Drawing.Color.White;
             this.startLabel.Location = new System.Drawing.Point(105, 114);
             this.startLabel.Name = "startLabel";
@@ -68,25 +69,40 @@
             // 
             this.p2Score.AutoSize = true;
             this.p2Score.BackColor = System.Drawing.Color.Transparent;
-            this.p2Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p2Score.Font = new System.Drawing.Font("mono 07_55", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p2Score.ForeColor = System.Drawing.Color.White;
             this.p2Score.Location = new System.Drawing.Point(498, 72);
             this.p2Score.Name = "p2Score";
-            this.p2Score.Size = new System.Drawing.Size(39, 42);
+            this.p2Score.Size = new System.Drawing.Size(53, 60);
             this.p2Score.TabIndex = 2;
             this.p2Score.Text = "0";
+            this.p2Score.Visible = false;
             // 
             // p1Score
             // 
             this.p1Score.AutoSize = true;
             this.p1Score.BackColor = System.Drawing.Color.Transparent;
-            this.p1Score.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.p1Score.Font = new System.Drawing.Font("mono 07_55", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p1Score.ForeColor = System.Drawing.Color.White;
             this.p1Score.Location = new System.Drawing.Point(75, 67);
             this.p1Score.Name = "p1Score";
-            this.p1Score.Size = new System.Drawing.Size(39, 42);
+            this.p1Score.Size = new System.Drawing.Size(53, 60);
             this.p1Score.TabIndex = 3;
             this.p1Score.Text = "0";
+            this.p1Score.Visible = false;
+            // 
+            // rallyLabel
+            // 
+            this.rallyLabel.AutoSize = true;
+            this.rallyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.rallyLabel.Font = new System.Drawing.Font("mono 07_55", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rallyLabel.ForeColor = System.Drawing.Color.White;
+            this.rallyLabel.Location = new System.Drawing.Point(253, 26);
+            this.rallyLabel.Name = "rallyLabel";
+            this.rallyLabel.Size = new System.Drawing.Size(70, 21);
+            this.rallyLabel.TabIndex = 4;
+            this.rallyLabel.Text = "Rally:";
+            this.rallyLabel.Visible = false;
             // 
             // Form1
             // 
@@ -94,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(616, 450);
+            this.Controls.Add(this.rallyLabel);
             this.Controls.Add(this.p1Score);
             this.Controls.Add(this.p2Score);
             this.Controls.Add(this.exclamationLabel);
@@ -118,6 +135,7 @@
         private System.Windows.Forms.Label exclamationLabel;
         private System.Windows.Forms.Label p2Score;
         private System.Windows.Forms.Label p1Score;
+        private System.Windows.Forms.Label rallyLabel;
     }
 }
 
